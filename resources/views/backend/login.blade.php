@@ -11,6 +11,7 @@
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url('images/icon.png')}}"/>
     <title>Checkin Jakarta</title>
     <!-- Error CSS -->
     <link href="{{ url('backend/css/login.css') }}" rel="stylesheet" media="screen">

@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url('images/icon.png')}}"/>
     <title>Checkin Jakarta</title>
     <link rel="stylesheet" href="{{ url('frontend/css/app.css')}}" />
     <script src="{{ url('frontend/bower_components/modernizr/modernizr.js') }}"></script>

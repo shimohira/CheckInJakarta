@@ -13,19 +13,17 @@
 
 Route::get('/', array('as' => 'index', 'uses' => 'SiteController@index'));
 
-	Route::get('article', array('as' => 'article', 'uses' => 'SiteController@article'));
+Route::get('article', array('as' => 'article', 'uses' => 'SiteController@article'));
 
-	Route::get('/coba', array('as' => 'textedit', 'uses' => 'SiteController@coba'));
-
-	Route::get('admin', array('as' => 'admin', 'uses' => 'BackendController@index'));
+Route::get('/coba', array('as' => 'textedit', 'uses' => 'SiteController@coba'));
 
 $router->group(['middleware' => 'auth'], function ($router) {
+    Route::get('admin', array('as' => 'admin', 'uses' => 'BackendController@index'));
 
-	Route::get('admin/article', array('as' => 'edit.article', 'uses' => 'BackendController@article'));
+    Route::get('admin/article', array('as' => 'edit.article', 'uses' => 'BackendController@article'));
 
-	Route::get('editor', 'BackendController@editor');
+    Route::get('editor', 'BackendController@editor');
 });
-
 
 
 // Authentication routes...
