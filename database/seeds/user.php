@@ -17,6 +17,7 @@ class user extends Seeder
                 array(
                     'name' => 'admin',
                     'email' => 'admin@admin.com',
+                    'username' => 'admin',
                     'password' => Hash::make('admin')
                 ),
             )

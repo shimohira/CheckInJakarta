@@ -10,7 +10,7 @@
     <meta name="keywords"
           content="Admin, Dashboard, Bootstrap3, Sass, transform, CSS3, HTML5, Web design, UI Design, Responsive Dashboard, Responsive Admin, Admin Theme, Best Admin UI, Bootstrap Theme, Bootstrap, Light weight Admin Dashboard,Light weight, Light weight Admin, Light weight Dashboard"/>
     <meta name="author" content="Bootstrap Gallery"/>
-    <link rel="shortcut icon" href="backend/img/favicon.html">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url('images/icon.png')}}"/>
 
     <!-- Bootstrap CSS -->
     <link href="{{ url('backend/css/bootstrap.min.css') }}" rel="stylesheet" media="screen">
@@ -65,8 +65,15 @@
                     <span>Dashboard</span>
                 </a>
             </li>
+            <li class="{{ isset($m_category) ? $m_category : '' }}" >
+                <a href="{{URL::route('category.index')}}">
+                    <div class="fs1" aria-hidden="true" data-icon="&#xe0f8;"></div>
+                    <span>Category</span>
+                </a>
+            </li>
+
             <li class="{{ isset($m_article) ? $m_article : '' }}" >
-                <a href="{{URL::route('edit.article')}}">
+                <a href="{{URL::route('article.index')}}">
                     <div class="fs1" aria-hidden="true" data-icon="&#xe0f8;"></div>
                     <span>Article</span>
                 </a>

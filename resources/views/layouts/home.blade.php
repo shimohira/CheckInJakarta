@@ -11,32 +11,24 @@
 </head>
 <body>
 <!-- header -->
-<div class="header">
+<div class="header" id="header">
     <div class="row">
         <div class="large-2 small-4 logo left"><img src="images/logo.png" alt=""></div>
-        <div class="large-6 small-12 medium-8 left">
+        <div class="large-7 small-12 medium-8 left">
             <div class="row select-ct no-padding">
                 <div class="large-6 small-6 left">
                     <label>
-                        <select class="select select-1">
-                            <option value="">#Tags</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                        </select>
+                        <input type="text" placeholder="Search by Tag..." class="input-1 yellow"/>
                     </label>
                 </div>
                 <div class="large-6 small-6 right">
                     <label>
-                        <select class="select select-2">
-                            <option value="">#Find</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                        </select>
+                        <input type="text" placeholder="Search by  keyword" class="input-2 yellow"/>
                     </label>
                 </div>
             </div>
         </div>
-        <div class="large-4 medium-8 small-8 social right">
+        <div class="large-3 medium-8 small-8 social mb right">
             <ul class="sc">
                 <a href="#"> <li class="insta"></li></a>
                 <a href="#"> <li class="pnt"></li></a>
@@ -48,7 +40,6 @@
     </div>
 </div>
 <!-- /header -->
-
 <!-- nav -->
 <div  id="mainnav" class="nav">
     <div class="row">
@@ -79,65 +70,75 @@
 </div>
 <!-- /nav -->
 
-
 @yield('content')
 
-<!-- nav-footer -->
+        <!-- nav-footer -->
 <div class="nav-footer">
     <div class="row">
-        <div class="large-2 medium-2 small-12 left">
-            <p>HOME</p>
-        </div>
-        <div class="large-2 medium-2 small-12 left">
-            <p>Lifestyle</p>
-            <ul>
-                <li>Brand</li>
-                <li>Tech</li>
-                <li>Tips</li>
-                <li>Events</li>
-                <li>People</li>
+        <ul>
+            <a href="#"><li><p>HOME</p></li></a>
+            <a href="#"><li><p>Lifestyle</p></a>
+            <ul class="ff-nav">
+                <a href="#"><li>History & Knowledge</li></a>
+                <a href="#"><li>Tips</li></a>
+                <a href="#"><li>Community</li></a>
+                <a href="#"><li>Technology</li></a>
+                <a href="#"><li>Events</li></a>
+                <a href="#"><li>People</li></a>
             </ul>
-        </div>
-        <div class="large-2 medium-2 small-12 left">
-            <p>Places</p>
-            <ul>
-                <li>Resto</li>
-                <li>Clubs</li>
-                <li>Bars</li>
-                <li>Hotels</li>
-                <li>Wisata</li>
+            </li>
+            <a href="#"><li><p>F&B</p></a>
+            <ul class="ff-nav">
+                <a href="#"><li>Fine Dine</li></a>
+                <a href="#"><li>Cafe & Resto</li></a>
+                <a href="#"><li>Street Food</li></a>
             </ul>
-        </div>
-        <div class="large-2 medium-2 small-12 left">
-            <p>Culinary</p>
-            <ul>
-                <li>Foods</li>
-                <li>Drinks</li>
-                <li>Kaki Lima</li>
-                <li>Resep</li>
+            </li>
+            <a href="#"><li><p>ACCOMODATION</p></a>
+            <ul class="ff-nav">
+                <a href="#"><li>Hotel</li></a>
+                <a href="#"><li>Guest House</li></a>
+                <a href="#"><li>Villas</li></a>
+                <a href="#"><li>Apartment</li></a>
             </ul>
-        </div>
-        <div class="large-2 medium-2  small-12 left">
-            <p>Automotive</p>
-            <ul>
-                <li>Bengkel</li>
-                <li>Modifikasi</li>
-                <li>Parts</li>
-                <li>Ototips</li>
+            </li>
+            <a href="#"><li><p>SPOT</p></a>
+            <ul class="ff-nav">
+                <a href="#"><li>Night Life</li></a>
+                <a href="#"><li>Recreation</li></a>
+                <a href="#"><li>Shopping</li></a>
+                <a href="#"><li>Wellnerss</li></a>
             </ul>
-        </div>
-        <div class="large-2 medium-2 small-12 left">
-            <p>Directory</p>
-        </div>
+            </li>
+            <a href="#"><li><p>BUSINESS</p></a>
+            <ul class="ff-nav">
+                <a href="#"><li>Profile</li></a>
+                <a href="#"><li>Company</li></a>
+                <a href="#"><li>Fresh</li></a>
+                <a href="#"><li>Biz Community</li></a>
+            </ul>
+            </li>
+            <a href="#"><li class="footer-last"><p>Directory</p></a>
+            <ul class="ff-nav">
+                <a href="#"><li class="footer-last"><p>ABOUT</p></li></a>
+                <a href="#"><li class="footer-last"><p>SITEMAP</p></li></a>
+                <a href="#"><li class="footer-last"><p>PRIVACY POLICY</p></li></a>
+                <a href="#"><li class="footer-last"><p>TERM OF USE</p></li></a>
+                <a href="#"><li class="footer-last"><p>ADVERTISE</p></li></a>
+                <a href="#"><li class="footer-last"><p>CONTACT</p></li></a>
+            </ul>
+            </li>
+        </ul>
     </div>
 </div>
 <!-- nav-footer -->
-
-<div class="footer">
-    <div class="row">
-        <div class="large-6 small-12 left"><p>www.checkinjakarta.com (C) 2015 </p></div>
-        <div class="large-6 right">
-            <div class="large-12 small-12 social social-footer right">
+<div class="sbr">
+    <div class="row sbr">
+        <div class="large-8 small-12 medium-8 left join-box">
+            <div class="large-6 small-12 medium-7 left join">
+                <h4>JOIN/FOLLOW OUR SOCIAL ON</h4>
+            </div>
+            <div class="large-4 small-12 medium-4 social social-footer right">
                 <ul class="sc-2">
                     <a href="#"> <li class="insta"></li></a>
                     <a href="#"> <li class="pnt"></li></a>
@@ -147,13 +148,26 @@
                 </ul>
             </div>
         </div>
+        <a href="#">
+            <div class="large-3 small-12 medium-3 subs-footer right">
+                <div class="pencil left"><img src="{{ url('images/pencil.png') }}" alt=""></div>
+                <h3>SUBSCRIBE NOW!</h3>
+            </div>
+        </a>
     </div>
 </div>
+<div class="footer">
+    <div class="row">
+        <div class="large-6 small-12 left"><p>www.checkinjakarta.com (C) 2015 </p></div>
+        <div class="large-6 right">
+        </div>
+    </div>
+</div>
+<a href="#header"><div class="toTop"></div></a>
 <script src="{{ url('frontend/bower_components/jquery/dist/jquery.min.js') }}"></script>
 <script src="{{ url('frontend/bower_components/foundation/js/foundation.min.js') }}"></script>
 <script src="{{ url('frontend/js/app.js') }}"></script>
 <script src="{{ url('frontend/js/custom.js') }}"></script>
-
 <script>
     $(".lifestyle").hover(function(){
         $(".submenu").toggle();

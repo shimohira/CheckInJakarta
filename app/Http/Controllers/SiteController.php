@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\article;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -23,6 +24,14 @@ class SiteController extends Controller
     public function article() {
         return View('article');
     }
+
+    public function articleTest() {
+        $data = array(
+            'article' => article::all()
+        );
+        return View('articleTest', $data);
+    }
+
 
     public function coba() {
         return View('test/coba');

@@ -1,10 +1,6 @@
 @extends('layouts.backend')
 @section('content')
-<!-- Summer Note CSS -->
-<link rel="stylesheet" href="{{ url('backend/css/summernote.css') }}">
-<!-- Summer Note JS -->
-<script src="{{ url('backend/js/summernote/summernote.js') }}"></script>
-        <!-- Top Bar Starts -->
+
 <div class="top-bar clearfix">
     <div class="page-title">
         <h4><div class="fs1" aria-hidden="true" data-icon="&#xe0ab;"></div>Form Elements</h4>
@@ -43,22 +39,54 @@
                         </ul>
                     </div>
                     <div class="panel-body">
-                        <form role="form">
+                        @if (Session::has('message'))
+                            <div class="alert alert-info">{{ Session::get('message') }}</div>
+                        @endif
+                            'id_category','title','desc','content','image','tag'
+                        <form role="form" method="post" action="{{ URL::route('article.store') }}" id="form1" runat="server" enctype="multipart/form-data">
+                            {!! csrf_field() !!}
                             <div class="form-group">
                                 <label for="Title">Title</label>
-                                <input type="text" class="form-control" id="" placeholder="Title Article">
-                            </div>
-                            <div class="form-group">
-                                <label for="describe">Describe</label>
-                                <input type="text" class="form-control" id="" placeholder="Describe Artile">
+                                <input type="text" class="form-control" name="title" id="" placeholder="Title Article">
                             </div>
                             <div class="form-group">
                                 <label for="category">Category</label>
-                                <input type="text" class="form-control" id="" placeholder="Category Artile">
+                                <select name="id_category" id="" class="form-control">
+                                    @foreach($category as $key => $value)
+                                        <option value="{{$value->id}}">{{$value->nm_category}}</option>
+                                    @endforeach
+                                </select>
                             </div>
                             <div class="form-group">
+                                <label for="describe">Describe</label>
+                                <input type="text" class="form-control" name="desc" id="" placeholder="Describe Artile">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="describe">Image</label>
+                                <input type="file" class="form-control" name="image" id="imgfile" placeholder="Image" onchange="readURL(this);">
+                                <label for="describe">Image preview</label>
+                                <img id="preview" src="{{ url('/images/thumbnail-default.jpg') }}" alt="image preview" class="form-control" style="height: 150px; width: auto;"/>
+                            </div>
+                            <script>
+                                function readURL(input) {
+                                    if (input.files && input.files[0]) {
+                                        var reader = new FileReader();
+                                        reader.onload = function (e) {
+                                            document.getElementById('preview').src=e.target.result;
+                                        }
+                                        reader.readAsDataURL(input.files[0]);
+                                    }
+                                }
+                            </script>
+                            <div class="form-group">
+                                <label for="describe">TAG</label>
+                                <input type="text" class="form-control" name="tag" id="" placeholder="Describe Artile">
+                            </div>
+
+                            <div class="form-group">
                                 <label for="article">Article</label>
-                                <textarea id="articleContent">
+                                <textarea id="articleContent" name="content">
                                 </textarea>
                             </div>
                             <script type="text/javascript">
@@ -72,7 +100,7 @@
                                         "save table contextmenu directionality emoticons template paste textcolor "
                                     ],
                                     content_css: "css/content.css",
-                                    toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | l      ink image jbimages | print preview media fullpage | forecolor backcolor emoticons",
+                                    toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image jbimages | print preview media fullpage | forecolor backcolor emoticons",
 
                                     relative_urls: false,
 
@@ -87,7 +115,6 @@
                             </div>
                             <button type="submit" class="btn btn-success">Submit</button>
                         </form>
-
                         <script type="text/javascript">
                             $(document).ready(function() {
                                 $('.summernote').summernote({height: 360});

@@ -14,16 +14,24 @@
 Route::get('/', array('as' => 'index', 'uses' => 'SiteController@index'));
 
 Route::get('article', array('as' => 'article', 'uses' => 'SiteController@article'));
+Route::get('articleTest', array('as' => 'articleTest', 'uses' => 'SiteController@articleTest'));
+Route::get('article/get/{filename}',array('as' => 'picture', 'uses' => 'BackendController@getPicture'));
 
 Route::get('/coba', array('as' => 'textedit', 'uses' => 'SiteController@coba'));
 
 $router->group(['middleware' => 'auth'], function ($router) {
     Route::get('admin', array('as' => 'admin', 'uses' => 'BackendController@index'));
 
-    Route::get('admin/article', array('as' => 'edit.article', 'uses' => 'BackendController@article'));
+    Route::get('admin/category', array('as' => 'category.index', 'uses' => 'BackendController@category'));
+    Route::post('admin/category', array('as' => 'category.store', 'uses' => 'BackendController@categoryStore'));
+    Route::get('admin/category/{id}', array('as' => 'category.del', 'uses' => 'BackendController@categoryDel'));
+
+    Route::get('admin/article', array('as' => 'article.index', 'uses' => 'BackendController@article'));
+    Route::post('admin/article', array('as' => 'article.store', 'uses' => 'BackendController@articleStore'));
 
     Route::get('editor', 'BackendController@editor');
 });
+
 
 
 // Authentication routes...

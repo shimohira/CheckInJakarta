@@ -90,6 +90,7 @@
         <div class="large-4 medium-4 left thumb-black hide-mobile columns"><h3>FOOD & BEVERAGES</h3></div>
         <div class="large-4 medium-4 right thumb-black hide-mobile columns"><h3>ACCOMODATIONS</h3></div>
     </div>
+
     <div class="row thumbnail-wrp">
 
         <div class="large-4 medium-4 small-12 left">
@@ -138,6 +139,7 @@
                 </div>
             </div>
         </div>
+
         <div class="large-4 medium-4 small-12 right hide-desktop-2"><h3>ACCOMODATIONS</h3></div>
         <div class="large-4 medium-4 small-12 left">
             <div class="large-12 medium-12">

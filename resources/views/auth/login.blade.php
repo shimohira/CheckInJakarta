@@ -11,6 +11,7 @@
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url('images/icon.png')}}"/>
     <title>Checkin Jakarta</title>
     <!-- Error CSS -->
     <link href="{{ url('backend/css/login.css') }}" rel="stylesheet" media="screen">
@@ -57,8 +58,8 @@
         </div>
         <div id="inputs">
             <div class="form-control" style="padding-bottom: 10px">
-                <input type="text" placeholder="Email" name="email" value="{{ old('email') }}">
-                <i class="fa fa-envelope-o"></i>
+                <input type="text" placeholder="Username" name="username" value="{{ old('username') }}">
+                <i class="fa fa-user"></i>
             </div>
             <div class="form-control" style="padding-bottom: 30px">
                 <input type="password" placeholder="Password" name="password">
